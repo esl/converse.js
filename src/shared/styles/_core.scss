@@ -422,6 +422,10 @@
     .nav-pills .show > .nav-link {
         background-color: var(--primary-color);
     }
+
+    svg {
+        display: inline;
+    }
 }
 
 @media screen and (max-width: 575px) {
