@@ -54,7 +54,6 @@
         align-items: flex-start;
         font-family: var(--branding-font);
         color: var(--link-color);
-        margin-bottom: 0.75em;
 
       .brand-name-wrapper {
         display: flex;
@@ -81,11 +80,6 @@
 
       .brand-subtitle {
           color: var(--text-color);
-      }
-
-      .brand-name__text {
-          font-size: 120%;
-          vertical-align: text-bottom;
       }
 
       .converse-svg-logo {

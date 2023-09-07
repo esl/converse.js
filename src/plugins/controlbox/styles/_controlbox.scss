@@ -443,12 +443,8 @@
                 }
 
                 converse-brand-logo {
-                    @include make-col(12);
-                    margin-top: 5em;
-                    margin-bottom: 1em;
                     .brand-heading {
                         width: 100%;
-                        font-size: 500%;
                         padding: 0.7em 0 0 0;
                         opacity: 0.8;
                         color: var(--brand-heading-color);
@@ -456,11 +452,6 @@
                     .brand-subtitle {
                         font-size: 90%;
                         padding: 0.5em;
-                    }
-                    @media screen and (max-width: $mobile-portrait-length) {
-                        .brand-heading {
-                            font-size: 300%;
-                        }
                     }
                 }
 
