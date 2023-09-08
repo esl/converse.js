@@ -36,7 +36,7 @@ export default () => {
                 `;
             } else {
                 return html`
-                    <converse-chat jid="${m.get('jid')}" class="chatbox"></converse-chat>
+                    <converse-chat jid="${m.get('jid')}" class="chatbox w-full"></converse-chat>
                 `;
             }
         })}

@@ -18,8 +18,12 @@ export async function onClearSession () {
         await Promise.all(
             _converse.chatboxes.map(c => c.messages && c.messages.clearStore({ 'silent': true }))
         );
+        /* This part needs to be disabled, because it deletes the login panel (controlbox).
+           The filter does not prevent the whole UI model from being destroyed in 'clearStore'.
+
         const filter = o => o.get('type') !== _converse.CONTROLBOX_TYPE;
         _converse.chatboxes.clearStore({ 'silent': true }, filter);
+        */
     }
 }
 

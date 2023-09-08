@@ -20,11 +20,9 @@
         }
         .chatbox {
             min-width: var(--overlayed-chat-width) !important;
-            width: var(--overlayed-chat-width);
 
             .box-flyout {
                 min-width: var(--overlayed-chat-width) !important;
-                width: var(--overlayed-chat-width);
             }
         }
     }

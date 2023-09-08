@@ -150,7 +150,7 @@ export default (el) => {
         feedback_class = CONNECTION_STATUS_CSS_CLASS[connection_status];
     }
     const conn_feedback_message = _converse.connfeedback.get('message');
-    return html` <converse-brand-heading></converse-brand-heading>
+    return html`
         <form id="converse-login" class="converse-form" method="post" @submit=${el.onLoginFormSubmitted}>
             <div class="conn-feedback fade-in ${!pretty_status ? 'hidden' : feedback_class}">
                 <p class="feedback-subject">${pretty_status}</p>
@@ -159,5 +159,5 @@ export default (el) => {
             ${CONNECTION_STATUS[connection_status] === 'CONNECTING'
                 ? tplSpinner({ 'classes': 'hor_centered' })
                 : form_fields(el)}
-        </form>`;
+        </form><converse-brand-heading></converse-brand-heading>`;
 };
