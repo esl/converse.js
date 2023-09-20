@@ -397,7 +397,7 @@
 
         &.converse-embedded,
         &.converse-fullscreen{
-            .controlbox-panes {
+            .controlbox-panes-visible-border-right {
                 border-right: 0.2rem solid var(--panel-divider-color);
             }
             .toggle-controlbox {

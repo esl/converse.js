@@ -1,5 +1,7 @@
 # Changelog
 
+- Removing border-right element in log in page
+
 ## 10.1.5 (2023-06-29)
 
 - #3209: Fix error when importing the `converse` global with bootstrap modal API
