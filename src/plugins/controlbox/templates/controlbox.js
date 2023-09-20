@@ -45,15 +45,16 @@ export default (el) => {
             </div>
             ${o.connected
                 ? html`
-                    <div class="controlbox-panes visible-border-right">
+                    <div class="controlbox-panes controlbox-panes-visible-border-right">
                         <div class="controlbox-pane">
                             <converse-user-profile></converse-user-profile>
                             <converse-headlines-feeds-list class="controlbox-section"></converse-headlines-feeds-list>
                             <div id="chatrooms" class="controlbox-section"><converse-rooms-list></converse-rooms-list></div>
-                            ${ api.settings.get("authentication") === _converse.ANONYMOUS ? '</div></div>' :
-                                html`<div id="converse-roster" class="controlbox-section"><converse-roster></converse-roster></div>
-                                </div></div>`
-                            }`
+                            ${ api.settings.get("authentication") === _converse.ANONYMOUS ? '' :
+                                html`<div id="converse-roster" class="controlbox-section"><converse-roster></converse-roster></div>`
+                            }
+                        </div>
+                    </div>`
                 : whenNotConnected(o)
             }
         </div>`
