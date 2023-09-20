@@ -11,9 +11,19 @@ function whenNotConnected (o) {
         return tplSpinner();
     }
     if (o['active-form'] === 'register') {
-        return html`<converse-register-panel></converse-register-panel>`;
+        return html`
+            <div class="controlbox-panes">
+                <div class="controlbox-pane">
+                    <converse-register-panel></converse-register-panel>
+                </div>
+            </div>`;
     }
-    return html`<converse-login-form id="converse-login-panel" class="controlbox-pane fade-in row no-gutters"></converse-login-form>`;
+    return html`
+        <div class="controlbox-panes">
+            <div class="controlbox-pane">
+                <converse-login-form id="converse-login-panel" class="controlbox-pane fade-in row no-gutters"></converse-login-form>
+            </div>
+        </div>`;
 }
 
 
@@ -33,19 +43,18 @@ export default (el) => {
                         </a>
                     `}
             </div>
-            <div class="controlbox-panes">
-                <div class="controlbox-pane">
-                    ${o.connected
-                        ? html`
+            ${o.connected
+                ? html`
+                    <div class="controlbox-panes visible-border-right">
+                        <div class="controlbox-pane">
                             <converse-user-profile></converse-user-profile>
                             <converse-headlines-feeds-list class="controlbox-section"></converse-headlines-feeds-list>
                             <div id="chatrooms" class="controlbox-section"><converse-rooms-list></converse-rooms-list></div>
-                            ${ api.settings.get("authentication") === _converse.ANONYMOUS ? '' :
-                                html`<div id="converse-roster" class="controlbox-section"><converse-roster></converse-roster></div>`
+                            ${ api.settings.get("authentication") === _converse.ANONYMOUS ? '</div></div>' :
+                                html`<div id="converse-roster" class="controlbox-section"><converse-roster></converse-roster></div>
+                                </div></div>`
                             }`
-                        : whenNotConnected(o)
-                    }
-                </div>
-            </div>
+                : whenNotConnected(o)
+            }
         </div>`
 };
